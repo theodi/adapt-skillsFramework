@@ -1,0 +1,77 @@
+{
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "id": "http://jsonschema.net",
+    "required": false,
+    "properties" : {
+        "pluginLocations" : {
+            "type" : "object",
+            "required" : true,
+            "properties" : {
+                "contentobject" : {
+                    "type" : "object",
+                    "properties" : {
+                        "_skillsFramework" : {
+                            "type" : "object",
+                            "required" : false,
+                            "legend" : "Skills framework",
+                            "properties" : {
+                                "_skills" : {
+                                    "type" : "array",
+                                    "required" : true,
+                                    "title" : "Skills",
+                                    "items" : {
+                                        "type" : "object",
+                                        "required" : true,
+                                        "properties" : {
+                                            "outcome" : {
+                                                "type" : "string",
+                                                "inputType" : "Text",
+                                                "title" : "Skill / Learning outcome",
+                                                "default" : "",
+                                                "validators" : [],
+                                                "help" : "Decription of the skill of learning outcome. e.g. Define a learning outcome.",
+                                                "translatable" : true
+                                            },
+                                            "credits" : {
+                                                "type" : "number",
+                                                "inputType" : "Number",
+                                                "title" : "Credit points/score",
+                                                "default" : "",
+                                                "validators" : [],
+                                                "help" : "The number of credit points that this skills is worth.",
+                                                "translatable" : true
+                                            },
+                                            "level" : {
+                                                "type" : "string",
+                                                "title" : "Skill level",
+                                                "required" : "true",
+                                                "default" : "explorer",
+                                                "help" : "The level (or badge) that this skill is relevant at (e.g. explorer)",
+                                                "enum" : [ 
+                                                    "explorer", 
+                                                    "strategist", 
+                                                    "practitioner", 
+                                                    "pioneer"
+                                                ],
+                                                "inputType" : {
+                                                    "type" : "Select",
+                                                    "options" : [ 
+                                                        "explorer", 
+                                                        "strategist", 
+                                                        "practitioner", 
+                                                        "pioneer"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

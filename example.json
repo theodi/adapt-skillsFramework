@@ -1,0 +1,18 @@
+// to be added to course/config.json
+
+{
+	"_skillsFramework": {
+	  "_skills": [
+            { 
+                "outcome": "Define a skills framework learning outcome skill",
+		"credits": 5,
+		"level": "explorer"
+	    },
+            { 
+                "outcome": "Define a second framework learning outcome skill",
+		"credits": 10,
+		"level": "practicioner"
+	    }
+	  ]
+	}
+}
