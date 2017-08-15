@@ -21,7 +21,7 @@ define([
     addLink: function() {
         title = "Outcomes";
         try {
-            title = Adapt.course.get('_globals')._extensions._skillsFramework.skillsLinkText;
+            title = Adapt.course.get('_globals')._extensions._skillsFramework.linkText;
         } catch(err) {}
         if( $('.about-links').prop('innerHTML').trim().length > 0) {
             $('.about-links').append(' | ');
@@ -34,7 +34,7 @@ define([
     	skills = contentObject.get('_skillsFramework')._skills;
         title = "Learning outcomes";
         try {
-            title = Adapt.course.get('_globals')._extensions._skillsFramework.skillsTitleText;
+            title = Adapt.course.get('_globals')._extensions._skillsFramework.titleText;
         } catch(err) {}
     	string = "";
     	count = 1;
