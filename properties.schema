@@ -10,7 +10,16 @@
             "title" : "Link text",
             "default" : "Outcomes",
             "validators" : [ ],
-            "help" : "The text which appears as the link in the theme to show the skills framework page.",
+            "help" : "The text which appears as the link in the theme to show the skillsFramework popup.",
+            "translatable" : true
+        },
+        "skillsTitleText" : {
+            "type" : "string",
+            "inputType" : "Text",
+            "title" : "Title",
+            "default" : "Learning outcomes",
+            "validators" : [ ],
+            "help" : "The title shown in the skillsFramework section/popup.",
             "translatable" : true
         }
     },

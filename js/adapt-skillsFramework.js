@@ -32,6 +32,10 @@ define([
     showSkills: function() {
     	contentObject = this.currentPage;
     	skills = contentObject.get('_skillsFramework')._skills;
+        title = "Learning outcomes";
+        try {
+            title = Adapt.course.get('_globals')._extensions._skillsFramework.skillsTitleText;
+        } catch(err) {}
     	string = "";
     	count = 1;
  		_.each(skills, function(skill) {
@@ -41,7 +45,7 @@ define([
     		count++;
     	});
 		var alertObject = {
-            title: "Learning Outcomes",
+            title: title,
             body: string
         };
         Adapt.once("notify:closed", function() {
