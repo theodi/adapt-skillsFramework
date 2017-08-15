@@ -3,6 +3,17 @@
     "$schema": "http://json-schema.org/draft-04/schema",
     "id": "http://jsonschema.net",
     "required": false,
+    "globals": {
+        "skillsLinkText" : {
+            "type" : "string",
+            "inputType" : "Text",
+            "title" : "Link text",
+            "default" : "Outcomes",
+            "validators" : [ ],
+            "help" : "The text which appears as the link in the theme to show the skills framework page.",
+            "translatable" : true
+        }
+    },
     "properties" : {
         "pluginLocations" : {
             "type" : "object",
@@ -40,7 +51,7 @@
                                                 "default" : "",
                                                 "validators" : [],
                                                 "help" : "The number of credit points that this skills is worth.",
-                                                "translatable" : true
+                                                "translatable" : false
                                             },
                                             "level" : {
                                                 "type" : "string",
@@ -62,7 +73,8 @@
                                                         "practitioner", 
                                                         "pioneer"
                                                     ]
-                                                }
+                                                },
+                                                "translatable" : true
                                             }
                                         }
                                     }

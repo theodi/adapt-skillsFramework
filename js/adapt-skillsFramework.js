@@ -7,6 +7,7 @@ define([
     initialize: function() {
     	this.listenTo(Adapt, 'skillsFramework:showSkills', this.showSkills);
     	this.listenTo(Adapt, 'router:page', this.updatePage);
+        this.listenTo(Adapt, 'pageView:ready', this.addLink);
     },
 
     updatePage: function(target) {
@@ -15,6 +16,17 @@ define([
 
     getPage: function() {
     	return this.currentPage;
+    },
+
+    addLink: function() {
+        title = "Outcomes";
+        try {
+            title = Adapt.course.get('_globals')._extensions._skillsFramework.skillsLinkText;
+        } catch(err) {}
+        if( $('.about-links').prop('innerHTML').trim().length > 0) {
+            $('.about-links').append(' | ');
+        } 
+        $('.about-links').append('<a class="about" onClick=\'callSkillsPageTrigger();\'>'+title+'</a>');
     },
 
     showSkills: function() {
@@ -48,3 +60,8 @@ define([
 
   return (skillsFramework);
 });
+
+function callSkillsPageTrigger() {
+    var Adapt = require('coreJS/adapt');
+    Adapt.trigger('skillsFramework:showSkills');
+}
