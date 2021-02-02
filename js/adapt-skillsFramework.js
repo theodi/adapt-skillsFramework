@@ -19,25 +19,25 @@ define([
     },
 
     addLink: function() {
-        title = "Outcomes";
+        var title = "Outcomes";
         try {
             title = Adapt.course.get('_globals')._extensions._skillsFramework.linkText;
         } catch(err) {}
         if( $('.about-links').prop('innerHTML').trim().length > 0) {
             $('.about-links').append(' | ');
         } 
-        $('.about-links').append('<a class="about" onClick=\'callSkillsPageTrigger();\'>'+title+'</a>');
+        $('.about-links').append('<a class="about" onClick="require(\'core/js/adapt\').trigger(\'skillsFramework:showSkills'\'); return false;">'+title+'</a>');
     },
 
     showSkills: function() {
-    	contentObject = this.currentPage;
-    	skills = contentObject.get('_skillsFramework')._skills;
-        title = "Learning outcomes";
+    	var contentObject = this.currentPage;
+    	var skills = contentObject.get('_skillsFramework')._skills;
+        var title = "Learning outcomes";
         try {
             title = Adapt.course.get('_globals')._extensions._skillsFramework.titleText;
         } catch(err) {}
-    	string = "";
-    	count = 1;
+    	var string = "";
+    	var count = 1;
  		_.each(skills, function(skill) {
  			string += "<h2>" + count + ": " + skill.outcome + "</h2>";
  			string += "Level: <strong>" + skill.level + "</strong><br/>";
@@ -64,8 +64,3 @@ define([
 
   return (skillsFramework);
 });
-
-function callSkillsPageTrigger() {
-    var Adapt = require('coreJS/adapt');
-    Adapt.trigger('skillsFramework:showSkills');
-}
