@@ -1,12 +1,12 @@
 {
   "name": "adapt-skillsFramework",
-  "version": "0.5.0",
+  "version": "1.0.1",
   "framework": "^5.0.0",
   "homepage": "https://github.com/theodi/adapt-skillsFramework",
   "issues": "",
   "displayName" : "Skills Framework",
   "extension" : "skillsFramework",
-  "description": "An extension that allows the assigning of skills credits to each page that form part of a wider skills framework. This version does not do anything with the data other than put it in the right config files.",
+  "description": "An extension that allows you to define the AIMs and LOs for each content Object as well as programmes the course is included in.",
   "main": "/js/adapt-skillsFramework.js",
   "keywords": [
     "adapt-plugin",

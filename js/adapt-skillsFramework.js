@@ -3,7 +3,7 @@ define([
 ], function(Adapt) {
 
   var skillsFramework = _.extend({
-  
+
     initialize: function() {
     	this.listenTo(Adapt, 'skillsFramework:showSkills', this.showSkills);
     	this.listenTo(Adapt, 'router:page', this.updatePage);
@@ -25,8 +25,8 @@ define([
         } catch(err) {}
         if( $('.about-links').prop('innerHTML').trim().length > 0) {
             $('.about-links').append(' | ');
-        } 
-        $('.about-links').append('<a class="about" onClick="require(\'core/js/adapt\').trigger(\'skillsFramework:showSkills'\'); return false;">'+title+'</a>');
+        }
+        $('.about-links').append('<a class="about" onClick="require(\'core/js/adapt\').trigger(\'skillsFramework:showSkills\'); return false;">'+title+'</a>');
     },
 
     showSkills: function() {
@@ -59,7 +59,7 @@ define([
 
 
   }, Backbone.Events);
-  
+
   skillsFramework.initialize();
 
   return (skillsFramework);

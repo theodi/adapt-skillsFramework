@@ -28,18 +28,120 @@
             "type" : "object",
             "required" : true,
             "properties" : {
+                "course" : {
+                    "type" : "object",
+                    "properties" : {
+                        "_skillsFramework" : {
+                            "type" : "object",
+                            "required" : false,
+                            "legend" : "Related programmes",
+                            "properties": {
+                                "_items" : {
+                                    "type": "array",
+                                    "title" : "Related programmes",
+                                    "help" : "The programmes this course is included in",
+                                    "required": true,
+                                    "items": {
+                                        "type" : "object",
+                                        "required" : true,
+                                        "properties" : {
+                                            "title": {
+                                                "type" : "string",
+                                                "inputType" : "Text",
+                                                "title" : "Title",
+                                                "default" : "",
+                                                "validators" : [ ],
+                                                "help" : "The title of the programme this course is a part of.",
+                                                "translatable" : true
+                                            },
+                                            "aim": {
+                                                "type" : "string",
+                                                "inputType" : "TextArea",
+                                                "title" : "Aim",
+                                                "default" : "The aim of this programme is to ...",
+                                                "validators" : [ ],
+                                                "help" : "The aim of the programme this course is a part of.",
+                                                "translatable" : true
+                                            },
+                                            "positionDescription": {
+                                                "type" : "string",
+                                                "inputType" : "TextArea",
+                                                "title" : "Position description",
+                                                "default" : "",
+                                                "validators" : [ ],
+                                                "help" : "A description of where this course sits in the programme.",
+                                                "translatable" : true
+                                            },
+                                            "learningOutcomes" : {
+                                                "type" : "array",
+                                                "required" : true,
+                                                "title" : "Related programme outcomes",
+                                                "help" : "The ILOs from the programme this course covers",
+                                                "items" : {
+                                                    "type" : "object",
+                                                    "required" : true,
+                                                    "properties" : {
+                                                        "outcome" : {
+                                                            "type" : "string",
+                                                            "inputType" : "Text",
+                                                            "title" : "Learning outcome",
+                                                            "default" : "",
+                                                            "validators" : [],
+                                                            "help" : "Decription of the skill of learning outcome.",
+                                                            "translatable" : true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "reflectiveQuestions" : {
+                                                "type" : "array",
+                                                "required" : true,
+                                                "title" : "Reflective questions",
+                                                "help" : "Reflective questions for this course that are only relevant to the programme.",
+                                                "items" : {
+                                                    "type" : "object",
+                                                    "required" : true,
+                                                    "properties" : {
+                                                        "question" : {
+                                                            "type" : "string",
+                                                            "inputType" : "Text",
+                                                            "title" : "Question/Exercise",
+                                                            "default" : "",
+                                                            "validators" : [],
+                                                            "help" : "A place to list specific reflective questions and activities related to this module that are only relevant to the programme.",
+                                                            "translatable" : true
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "contentobject" : {
                     "type" : "object",
                     "properties" : {
                         "_skillsFramework" : {
                             "type" : "object",
                             "required" : false,
-                            "legend" : "Skills framework",
+                            "legend" : "Aim, outcomes and reflective questions",
                             "properties" : {
-                                "_skills" : {
+                                "aim": {
+                                    "type" : "string",
+                                    "inputType" : "Text",
+                                    "title" : "Aim",
+                                    "default" : "The aim of this module is to ...",
+                                    "validators" : [ ],
+                                    "help" : "The aim of the module.",
+                                    "translatable" : true
+                                },
+                                "learningOutcomes" : {
                                     "type" : "array",
                                     "required" : true,
-                                    "title" : "Skills",
+                                    "title" : "Learning outcomes",
                                     "items" : {
                                         "type" : "object",
                                         "required" : true,
@@ -47,42 +149,30 @@
                                             "outcome" : {
                                                 "type" : "string",
                                                 "inputType" : "Text",
-                                                "title" : "Skill / Learning outcome",
+                                                "title" : "Learning outcome",
                                                 "default" : "",
                                                 "validators" : [],
                                                 "help" : "Decription of the skill of learning outcome. e.g. Define a learning outcome.",
                                                 "translatable" : true
-                                            },
-                                            "credits" : {
-                                                "type" : "number",
-                                                "inputType" : "Number",
-                                                "title" : "Credit points/score",
+                                            }
+                                        }
+                                    }
+                                },
+                                "reflectiveQuestions" : {
+                                    "type" : "array",
+                                    "required" : true,
+                                    "title" : "Reflective questions",
+                                    "items" : {
+                                        "type" : "object",
+                                        "required" : true,
+                                        "properties" : {
+                                            "question" : {
+                                                "type" : "string",
+                                                "inputType" : "TextArea",
+                                                "title" : "Question/Exercise",
                                                 "default" : "",
                                                 "validators" : [],
-                                                "help" : "The number of credit points that this skills is worth.",
-                                                "translatable" : false
-                                            },
-                                            "level" : {
-                                                "type" : "string",
-                                                "title" : "Skill level",
-                                                "required" : "true",
-                                                "default" : "explorer",
-                                                "help" : "The level (or badge) that this skill is relevant at (e.g. explorer)",
-                                                "enum" : [ 
-                                                    "explorer", 
-                                                    "strategist", 
-                                                    "practitioner", 
-                                                    "pioneer"
-                                                ],
-                                                "inputType" : {
-                                                    "type" : "Select",
-                                                    "options" : [ 
-                                                        "explorer", 
-                                                        "strategist", 
-                                                        "practitioner", 
-                                                        "pioneer"
-                                                    ]
-                                                },
+                                                "help" : "A place to list specific reflective questions and activities related to this module.",
                                                 "translatable" : true
                                             }
                                         }
