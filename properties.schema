@@ -131,7 +131,7 @@
                             "properties" : {
                                 "aim": {
                                     "type" : "string",
-                                    "inputType" : "Text",
+                                    "inputType" : "TextArea",
                                     "title" : "Aim",
                                     "default" : "The aim of this module is to ...",
                                     "validators" : [ ],
@@ -168,7 +168,7 @@
                                         "properties" : {
                                             "question" : {
                                                 "type" : "string",
-                                                "inputType" : "TextArea",
+                                                "inputType" : "Text",
                                                 "title" : "Question/Exercise",
                                                 "default" : "",
                                                 "validators" : [],

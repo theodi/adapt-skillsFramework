@@ -31,19 +31,28 @@ define([
 
     showSkills: function() {
     	var contentObject = this.currentPage;
-    	var skills = contentObject.get('_skillsFramework')._skills;
-        var title = "Learning outcomes";
+        var title = "Aim, outcomes and reflective questions ";
         try {
             title = Adapt.course.get('_globals')._extensions._skillsFramework.titleText;
         } catch(err) {}
     	var string = "";
-    	var count = 1;
- 		_.each(skills, function(skill) {
- 			string += "<h2>" + count + ": " + skill.outcome + "</h2>";
- 			string += "Level: <strong>" + skill.level + "</strong><br/>";
- 			string += "Credits: <strong>" + skill.credits + "</strong><br/><br/>";
-    		count++;
+        var aim = contentObject.get('_skillsFramework').aim;
+        string += "<h2>Aim</h2>";
+        string += aim;
+        var outcomes = contentObject.get('_skillsFramework').learningOutcomes;
+        string += "<h2>Learning outcomes</h2>";
+        string += "<ol>";
+ 		_.each(outcomes, function(outcome) {
+ 			string += "<li>" + outcome.outcome + "</li>";
     	});
+        string += "</ol>";
+        var reflectiveQuestions = contentObject.get('_skillsFramework').reflectiveQuestions;
+        string += "<h2>Reflective questions / exercises</h2>";
+        string += "<ul>";
+ 		_.each(reflectiveQuestions, function(question) {
+ 			string += "<li>" + question.question + "</li>";
+    	});
+        string += "</ul>";
 		var alertObject = {
             title: title,
             body: string
