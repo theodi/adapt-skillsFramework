@@ -54,6 +54,15 @@
                                                 "help" : "The title of the programme this course is a part of.",
                                                 "translatable" : true
                                             },
+                                            "uri": {
+                                                "type" : "string",
+                                                "inputType" : "Text",
+                                                "title" : "URL/URI",
+                                                "default" : "",
+                                                "validators" : [ ],
+                                                "help" : "A link to the programme URL,URI",
+                                                "translatable" : true
+                                            },
                                             "aim": {
                                                 "type" : "string",
                                                 "inputType" : "TextArea",
