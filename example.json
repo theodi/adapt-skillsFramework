@@ -1,18 +1,68 @@
-// to be added to course/config.json
-
+//Added to contentObjects.json
 {
 	"_skillsFramework": {
-	  "_skills": [
-            { 
-                "outcome": "Define a skills framework learning outcome skill",
-		"credits": 5,
-		"level": "explorer"
-	    },
-            { 
-                "outcome": "Define a second framework learning outcome skill",
-		"credits": 10,
-		"level": "practicioner"
-	    }
-	  ]
+		"aim": "<p>The aim of this content object is ...</p>",
+		"learningOutcomes": [
+		  {
+			"outcome": "Specific learning outcome for the content object, not wider course or programme."
+		  },
+		  {
+			"outcome": "Another one"
+		  }
+		],
+		"reflectiveQuestions": [
+		  {
+			"question": "Specific reflective questions for this content object, not the wider course or programme."
+		  },
+		  {
+			"question": "Anoter one"
+		  }
+		]
+	  }
+}
+
+// Added to course.json
+{
+	"_globals": {
+		"_extensions": {
+			"_skillsFramework": {
+				"linkText": "Aim/Outcomes",
+				"titleText": "Aim, outcomes and reflective questions"
+			}
+		}
+	}
+},
+{
+	"_skillsFramework": {
+	  "_items": [
+		{
+			"title": "Programme title",
+			"uri": "https://my.programme.uri",
+			"aim": "<p>Enable you to understand how to use this Adapt Plugin</p>",
+			"positionDescription": "<p>This content object is the only thing in this programme!</p>",
+			"learningOutcomes": [
+			  {
+				"outcome": "Describe what a learning outcome is"
+			  },
+			  {
+				"outcome": "Write acceptable learning outcomes"
+			  }
+			],
+			"reflectiveQuestions": [
+			  {
+				"question": "Are your own learning outcomes as good as mine?"
+			  },
+			  {
+				"question": "What recommendations would you make to others?"
+			  }
+			]
+		  },
+		  {
+			"title": "Programme title 2",
+			//...
+			//...
+		  },
+		]
 	}
 }
+
